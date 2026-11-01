@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Coordinatore</title>
+    <style>
+        body { font-family: sans-serif; padding: 2rem; background: #f5f5f5; }
+        .box { background: white; padding: 2rem; border-radius: 12px; max-width: 400px; margin: 2rem auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 12px; margin: 1rem 0; font-size: 1rem; border: 1px solid #ccc; border-radius: 8px; }
+        button { padding: 12px 24px; background: #D4AF37; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; }
+        #panel { display: none; color: green; font-weight: bold; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Test Accesso Coordinatore</h2>
+        <p>Password: <strong>112CdV</strong></p>
+        <input type="password" id="pass" placeholder="Password">
+        <button onclick="login()">Accedi</button>
+        <button onclick="loginTest()" style="background:#666;color:white;margin-left:0.5rem;">Prova senza password</button>
+        <div id="panel">Accesso effettuato! Sei dentro.</div>
+    </div>
+    <script>
+        function login() {
+            var p = document.getElementById('pass').value.trim();
+            if (p === '112CdV' || p === 'coordinatore') {
+                document.getElementById('panel').style.display = 'block';
+                alert('OK!');
+            } else {
+                alert('Password errata: ' + p);
+            }
+        }
+        function loginTest() {
+            document.getElementById('panel').style.display = 'block';
+            alert('Prova OK!');
+        }
+    </script>
+</body>
+</html>
